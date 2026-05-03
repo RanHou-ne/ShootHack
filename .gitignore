@@ -46,6 +46,10 @@ Thumbs.db
 *.DS_Store
 Desktop.ini
 
+# Legacy / archived source
+legacy/
+legacy_src/
+
 # Test build dirs
 Release/
 Debug/
