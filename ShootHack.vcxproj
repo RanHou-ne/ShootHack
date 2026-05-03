@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6C62AA95-CECA-49D7-8E9D-E1F07FB647BC}</ProjectGuid>
+    <RootNamespace>ShootHack</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\obj\</IntDir>
+    <TargetName>ShootHack</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;SHOOTHACK_EXPORTS;_CRT_SECURE_NO_WARNINGS;IMGUI_DEFINE_MATH_OPERATORS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)src\Core;$(ProjectDir)src\Engine;$(ProjectDir)src\Hook;$(ProjectDir)src\Config;$(ProjectDir)src\UI\Menu;$(ProjectDir)src\UI\Draw;$(ProjectDir)src\ESP;$(ProjectDir)src\SDK;$(ProjectDir)src\Assets;$(ProjectDir)src\ThirdParty;$(ProjectDir);$(ProjectDir)ImGui;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;user32.lib;gdi32.lib;shell32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;SHOOTHACK_EXPORTS;_CRT_SECURE_NO_WARNINGS;IMGUI_DEFINE_MATH_OPERATORS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)src\Core;$(ProjectDir)src\Engine;$(ProjectDir)src\Hook;$(ProjectDir)src\Config;$(ProjectDir)src\UI\Menu;$(ProjectDir)src\UI\Draw;$(ProjectDir)src\ESP;$(ProjectDir)src\SDK;$(ProjectDir)src\Assets;$(ProjectDir)src\ThirdParty;$(ProjectDir);$(ProjectDir)ImGui;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;user32.lib;gdi32.lib;shell32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <!-- ================================================================
+         源文件编译规则
+         ================================================================
+         包含：
+           src\**\*.cpp       → 所有新结构源文件（Core/Engine/Hook/Config/UI）
+           ImGui\*.cpp        → ImGui 核心源文件
+         排除：
+           x64\**\*           → 编译输出目录
+           **\obj\**\*        → 中间文件目录
+           .vs\**\*           → VS 隐藏目录
+           sdk\**\*           → SDK 参考文件（不参与编译）
+           Scripts\**\*       → 脚本文件（不参与编译）
+           mofang\**\*        → 旧版本代码（仅参考，不编译）
+           legacy\**\*        → 遗留代码（不编译）
+           misc\**\*          → 杂项文件（不编译）
+           ImGui\imgui_demo.cpp      → Demo 文件（不需要）
+           ImGui\imgui_freetype.cpp  → FreeType 集成（按需启用）
+         ================================================================ -->
+    <ClCompile Include="src\**\*.cpp;ImGui\*.cpp" Exclude="x64\**\*;**\obj\**\*;.vs\**\*;sdk\**\*;Scripts\**\*;mofang\**\*;legacy_src\**\*;legacy\**\*;misc\**\*;ImGui\imgui_demo.cpp;ImGui\imgui_freetype.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- 头文件（仅用于 IDE 索引，不参与编译） -->
+    <ClInclude Include="src\**\*.h;ImGui\*.h" Exclude="x64\**\*;**\obj\**\*;.vs\**\*;sdk\**\*;Scripts\**\*;mofang\**\*;legacy_src\**\*;legacy\**\*;misc\**\*" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

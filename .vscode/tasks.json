@@ -1,0 +1,88 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build ShootHack Debug x64",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\.vscode\\Invoke-MSBuild.ps1",
+        "-Target",
+        "Build",
+        "-Configuration",
+        "Debug",
+        "-Platform",
+        "x64",
+        "-MaxCpuCount"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "Open Xenos64 Injector",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Start-Process -FilePath 'D:\\Tool\\FzTool\\Xenos_2.2.0\\Xenos64.exe' -WorkingDirectory 'D:\\Tool\\FzTool\\Xenos_2.2.0'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build ShootHack Release x64",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\.vscode\\Invoke-MSBuild.ps1",
+        "-Target",
+        "Build",
+        "-Configuration",
+        "Release",
+        "-Platform",
+        "x64",
+        "-MaxCpuCount"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "Clean ShootHack x64",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\.vscode\\Invoke-MSBuild.ps1",
+        "-Target",
+        "Clean",
+        "-Configuration",
+        "Debug",
+        "-Platform",
+        "x64"
+      ],
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    }
+  ]
+}

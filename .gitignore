@@ -1,0 +1,49 @@
+# Visual Studio
+.vs/
+*.sln.docstates
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.filters
+*.vcxproj.user
+
+# Build output
+x64/
+bin/
+obj/
+
+# Build logs
+build_log.txt
+build_output.txt
+
+# Debug/PDB files
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.obj
+*.tlog
+*.recipe
+*.pgc
+*.pgd
+
+# ReSharper
+_ReSharper*/
+
+# Cache
+*.cache
+ipch/
+
+# Tools
+[Pp]ackages/
+[Nn]uget.exe
+
+# OS files
+Thumbs.db
+*.DS_Store
+Desktop.ini
+
+# Test build dirs
+Release/
+Debug/
