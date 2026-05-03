@@ -1,5 +1,7 @@
-# Visual Studio
+# IDE / Editor
 .vs/
+.vscode/
+.codebuddy/
 *.sln.docstates
 *.user
 *.suo
