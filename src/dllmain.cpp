@@ -66,6 +66,11 @@ static DWORD WINAPI InitializeThread(LPVOID)
         printf("[DLL] 初始化引擎层...\n");
         Engine::Initialize();
 
+        // ---- GOM 遍历：输出所有游戏对象地址和名称 ----
+        printf("[DLL] 等待场景加载后遍历 GOM...\n");
+        Sleep(2000);  // 等待 2 秒让场景加载
+        Engine::TraverseGOM(0x17C3F18, 0);  // 遍历所有对象
+
         // ---- 初始化 Hook 系统（安装 DX11 虚表 Hook）----
         printf("[DLL] 初始化 Hook 系统...\n");
         if (!Hook::InitializeAllHooks())

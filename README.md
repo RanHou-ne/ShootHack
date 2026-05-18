@@ -100,4 +100,4 @@ ShootHack/
 
 ## 许可
 
-[MIT](LICENSE)
+[GNU General Public License v3.0](LICENSE)
