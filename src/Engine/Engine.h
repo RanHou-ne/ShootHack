@@ -248,6 +248,11 @@ namespace Engine
     // 打印指定程序集中所有类的名称
     void DumpAssembly(const char* AssemblyName);
 
+    // ---- GOM 遍历 ----
+    // 从 UnityPlayer.dll + offset 遍历 GameObjectManager 链表，
+    // 输出所有游戏对象的地址和名称到控制台
+    void TraverseGOM(uintptr_t offset = 0x17C3F18, size_t maxCount = 0);
+
     // ---- GameObject 信息读取 ----
     // 通过 C# 方法指针读取 GameObject 数据（绕过"薄包装器"问题）
 
